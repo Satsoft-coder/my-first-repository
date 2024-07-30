@@ -1,6 +1,6 @@
 package Auto;
 
-public enum DriversLicense {
+public enum License {
     A1,
     A,
     B,
