@@ -8,29 +8,22 @@ public class Passenger extends Car {
         this.numberOfSeats = numberOfSeats;
     }
 
-//    public boolean checkKey(Driver driver){
-//        int driverKey[]=driver.getDriverKey();
-//            boolean result = false;
-//
-//        for (int i = 0; i < driverKey.length; i++) {
-//            boolean isKeyPinCodeValid = driverKey[i] == Passenger.super.getPIN_CODE();
-//            /*
-//            key.getPIN_CODE() == PIN_CODE;
-//            CTRL + ALT + V
-//            boolean b = key.getPIN_CODE() == PIN_CODE;
-//            */
-//            if (isKeyPinCodeValid) return isKeyPinCodeValid;
-//        }
-//        return result;
-//    }
     @Override
     public void move() {
     }
 
     @Override
-    public void start() {
-    }
+    public void start(Driver driver) {
 
+        if (checkKey(driver) & isOpen() & !isEngineStart()) {
+            setEngineStart(true);
+            System.out.println("Авто заведен");
+        }
+        else {
+            setEngineStart(false);
+            System.out.println("Авто заглушен");
+        }
+    }
     @Override
     public void open() {
     }
@@ -57,5 +50,21 @@ public class Passenger extends Car {
         else {
             System.out.println("Водитель"+driver+ " не смог открыть пассажирский авто");
         }
+    }
+
+    @Override
+    public void move(Driver driver) {
+        if (isOpen() & isEngineStart() & checkLicense(driver)) {
+            System.out.println("Авто поехал (тормозов нет, если что :)");
+
+        }
+        else {
+            System.out.println("Авто не может ехать (закрыт, не заведен или нет прав на управление");
+        }
+    }
+
+    @Override
+    public void start() {
+
     }
 }

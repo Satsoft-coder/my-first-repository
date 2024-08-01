@@ -3,11 +3,10 @@ package Auto;
 public abstract class Car implements Openable,Startable,Moveble {
     private final int PIN_CODE;
     private boolean open;
-    private boolean start;
+    private boolean engineStart;
 
     Engine engine;
     Wheels wheels;
-
     License license;
 
     public Car(int PIN_CODE, Engine engine, Wheels wheels,
@@ -32,6 +31,24 @@ public abstract class Car implements Openable,Startable,Moveble {
         }
         return result;
     }
+
+    public boolean checkLicense(Driver driver) {
+        boolean result = false;
+        if (driver.getLicenses() != null) {
+
+            for (int i = 0; i < driver.getLicenses().length; i++) {
+                boolean isLicenseValid = driver.getLicenses()[i] == license;
+
+                if (isLicenseValid) return isLicenseValid;
+            }
+            return result;
+        }
+        else {
+            System.out.println("У человека вообще нет прав");
+            return result;
+        }
+    }
+
         public int getPIN_CODE () {
             return PIN_CODE;
         }
@@ -52,5 +69,17 @@ public abstract class Car implements Openable,Startable,Moveble {
         this.open = open;
     }
 
+    public boolean isEngineStart() {
+        return engineStart;
+    }
+
+    public void setEngineStart(boolean engineStart) {
+        this.engineStart = engineStart;
+    }
+
+    public abstract void start(Driver driver);
+
     public abstract void open(Driver driver);
+
+    public abstract void move(Driver driver);
 }

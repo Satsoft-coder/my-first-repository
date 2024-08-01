@@ -45,9 +45,17 @@ public class Main {
         passenger1.open(driver1);
         passenger1.open(driver1);
         passenger1.open(driver1);
+        passenger3.open(driver2);
+
+        passenger1.start(driver1);
+        passenger1.move(driver1);
 
         truck1.open(driver1);
         truck1.open(driver2);
         truck1.open(driver3);
+
+        truck2.open(driver3);
+        truck2.move(driver3);
+
     }
 }

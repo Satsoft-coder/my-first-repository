@@ -14,6 +14,19 @@ public class Truck extends Car {
     }
 
     @Override
+    public void start(Driver driver) {
+        if (checkKey(driver) & isOpen() & !isEngineStart()) {
+            setEngineStart(true);
+            System.out.println("Авто заведен");
+        }
+        else {
+            setEngineStart(false);
+            System.out.println("Авто заглушен");
+        }
+    }
+
+
+    @Override
     public void open(Driver driver) {
 
         String status;
@@ -36,6 +49,18 @@ public class Truck extends Car {
                 System.out.println("Водитель" + driver + " не смог открыть грузовой авто");
             }
         }
+
+    @Override
+    public void move(Driver driver) {
+
+            if (isOpen() & isEngineStart() & checkLicense(driver)) {
+                System.out.println("Грузовик поехал (тормозов нет, если что :)");
+
+            }
+            else {
+                System.out.println("Грузовик не может ехать (закрыт, не заведен или нет прав на управление");
+            }
+    }
 
     @Override
     public void start() {
