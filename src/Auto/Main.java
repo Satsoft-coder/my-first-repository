@@ -1,5 +1,7 @@
 package Auto;
 
+import java.lang.reflect.Array;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -16,22 +18,22 @@ public class Main {
 
         //Create Drivers
         Driver driver1=new Driver(5);
-        driver1.setLicenses (License.A1);
-        driver1.setLicenses(License.B);
-        driver1.setKeys(45);
-        driver1.setKeys(44);
-        driver1.setKeys(43);
+        License[] lisenses1 = {License.A1, License.B};
+        driver1.setLicenses (lisenses1);
+        int key[]={45,44,43,42};
+        driver1.setKeys(key);
 
         Driver driver2=new Driver(14);
-        driver2.setLicenses(License.C);
-        driver2.setKeys(35);
-        driver2.setKeys(34);
+        License[] lisenses2 = {License.C,License.DE};
+        driver2.setLicenses (lisenses2);
+        int key2[]={35,43};
+        driver2.setKeys(key2);
 
         Driver driver3=new Driver(10);
-        driver3.setKeys(21);
-        driver3.setKeys(22);
-        driver3.setKeys(45);
-        driver3.setKeys(35);
+      //  License[] lisenses3 = {License.C,License.DE};
+      //  driver3.setLicenses (lisenses3);
+        int key3[]={21,22,23,45,35};
+        driver3.setKeys(key3);
 
         //Create Truck and PassengerCar
         Truck truck1=new Truck(35,engine4,wheel3,License.C,7000);
@@ -40,6 +42,8 @@ public class Main {
         Passenger passenger2=new Passenger(22,engine2,wheel2,License.BE,10);
         Passenger passenger3=new Passenger(45,engine1,wheel1,License.A1,2);
 
+        passenger2.open(driver1);
+        passenger1.open(driver1);
 
     }
 }

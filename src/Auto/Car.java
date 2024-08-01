@@ -26,4 +26,6 @@ public abstract class Car implements Openable,Startable,Moveble {
         public Wheels getWheels () {
             return wheels;
         }
+
+    public abstract void open(Driver driver);
 }

@@ -22,4 +22,9 @@ public class Truck extends Car {
     public void start() {
 
     }
+
+    @Override
+    public void open(Driver driver) {
+
+    }
 }

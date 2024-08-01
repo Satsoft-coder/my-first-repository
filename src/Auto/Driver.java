@@ -1,8 +1,8 @@
 package Auto;
 
 public class Driver {
-License licenses;
-int keys;
+private License[] licenses;
+int driverKey[];
     int drivingExperience;
 
 //    public Driver(DriverLicense[] driverLicense, DriverKey[] driverKeys, int drivingExperience) {
@@ -15,20 +15,20 @@ int keys;
         this.drivingExperience = drivingExperience;
     }
 
-    public License getLicenses() {
+    public License[] getLicenses() {
         return licenses;
     }
 
-    public void setLicenses(License licenses) {
-        this.licenses = licenses;
+    public void setLicenses(License[] licenses) {
+    License licenses1 []=new License[licenses.length];
+        for (int i = 0; i < licenses.length; i++) {
+            licenses1[i] = licenses[i];
+        }
+    this.licenses=licenses1;
     }
 
-    public int getKeys() {
-        return keys;
-    }
-
-    public void setKeys(int keys) {
-        this.keys = keys;
+    public void setKeys(int keys[]) {
+        this.driverKey =keys;
     }
 
     public int getDrivingExperience() {
@@ -37,5 +37,9 @@ int keys;
 
     public void setDrivingExperience(int drivingExperience) {
         this.drivingExperience = drivingExperience;
+    }
+
+    public int[] getDriverKey() {
+        return driverKey;
     }
 }
