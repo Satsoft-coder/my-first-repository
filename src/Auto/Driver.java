@@ -1,5 +1,7 @@
 package Auto;
 
+import java.util.Arrays;
+
 public class Driver {
 private License[] licenses;
 int driverKey[];
@@ -45,6 +47,7 @@ int driverKey[];
 
     @Override
     public String toString() {
-        return " с " + drivingExperience +"-им стажем";
+        return " с " + drivingExperience +"-им стажем, с правами "+
+                Arrays.toString(licenses);
     }
 }

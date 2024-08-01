@@ -1,5 +1,7 @@
 package Auto;
 
+import java.util.Arrays;
+
 public abstract class Car implements Openable,Startable,Moveble {
     private final int PIN_CODE;
     private boolean open;
@@ -85,4 +87,14 @@ public abstract class Car implements Openable,Startable,Moveble {
     public abstract void open(Driver driver);
 
     public abstract void move(Driver driver);
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                ", engineStart=" + engineStart +
+                ", engine=" + engine +
+                ", wheels=" + Arrays.toString(wheels) +
+                ", license=" + license +
+                '}';
+    }
 }
