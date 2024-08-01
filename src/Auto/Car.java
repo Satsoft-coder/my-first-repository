@@ -6,11 +6,10 @@ public abstract class Car implements Openable,Startable,Moveble {
     private boolean engineStart;
 
     Engine engine;
-    Wheels wheels;
+    Wheels[] wheels;
     License license;
 
-    public Car(int PIN_CODE, Engine engine, Wheels wheels,
-               License license) {
+    public Car(int PIN_CODE, Engine engine,License license) {
         this.PIN_CODE = PIN_CODE;
         this.engine = engine;
         this.wheels = wheels;
@@ -57,12 +56,16 @@ public abstract class Car implements Openable,Startable,Moveble {
             return engine;
         }
 
-        public Wheels getWheels () {
+        public Wheels[] getWheels () {
             return wheels;
         }
 
     public boolean isOpen() {
         return open;
+    }
+
+    public void setWheels(Wheels[] wheels) {
+        this.wheels = wheels;
     }
 
     public void setOpen(boolean open) {

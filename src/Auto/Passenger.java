@@ -3,8 +3,8 @@ package Auto;
 public class Passenger extends Car {
     int numberOfSeats;
 
-    public Passenger(int PIN_CODE, Engine engine, Wheels wheels, License license, int numberOfSeats) {
-        super(PIN_CODE, engine, wheels, license);
+    public Passenger(int PIN_CODE, Engine engine, License license, int numberOfSeats) {
+        super(PIN_CODE, engine, license);
         this.numberOfSeats = numberOfSeats;
     }
 
@@ -59,7 +59,7 @@ public class Passenger extends Car {
 
         }
         else {
-            System.out.println("Авто не может ехать (закрыт, не заведен или нет прав на управление");
+            System.out.println("Авто не может ехать (закрыт, не заведен или нет прав на управление)");
         }
     }
 

@@ -34,11 +34,23 @@ public class Main {
         driver3.setKeys(key3);
 
         //Create Truck and PassengerCar
-        Truck truck1=new Truck(35,engine4,wheel3,License.C,7000);
-        Truck truck2=new Truck(22,engine4,wheel3,License.CE,8200);
-        Passenger passenger1=new Passenger(43,engine1,wheel1,License.B,5);
-        Passenger passenger2=new Passenger(22,engine2,wheel2,License.BE,10);
-        Passenger passenger3=new Passenger(45,engine1,wheel1,License.A1,2);
+        Wheels[] whels1={wheel1,wheel1,wheel1,wheel1};
+        Wheels[] whels2={wheel2,wheel2,wheel1,wheel1};
+        Wheels[] whels3={wheel1,wheel1,wheel3,wheel3};
+        Wheels[] whels4={wheel3,wheel3,wheel3,wheel3};
+        Wheels[] whels5={wheel1,wheel2,wheel2,wheel1};
+        Wheels[] whels6={wheel2,wheel2,wheel2,wheel2,wheel1,wheel1};
+
+        Truck truck1=new Truck(35,engine4,License.C,7000);
+        truck1.setWheels(whels6);
+        Truck truck2=new Truck(22,engine4,License.CE,8200);
+        truck2.setWheels(whels5);
+        Passenger passenger1=new Passenger(43,engine1,License.B,5);
+        passenger1.setWheels(whels3);
+        Passenger passenger2=new Passenger(22,engine2,License.BE,10);
+        passenger1.setWheels(whels2);
+        Passenger passenger3=new Passenger(45,engine1,License.A1,2);
+        passenger1.setWheels(whels1);
 
         //действия
         passenger2.open(driver1);

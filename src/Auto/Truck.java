@@ -3,8 +3,8 @@ package Auto;
 public class Truck extends Car {
     int loadCapacity;
 
-    public Truck(int PIN_CODE, Engine engine, Wheels wheels, License license, int loadCapacity) {
-        super(PIN_CODE, engine, wheels, license);
+    public Truck(int PIN_CODE, Engine engine, License license, int loadCapacity) {
+        super(PIN_CODE, engine, license);
         this.loadCapacity = loadCapacity;
     }
 
