@@ -42,4 +42,9 @@ int driverKey[];
     public int[] getDriverKey() {
         return driverKey;
     }
+
+    @Override
+    public String toString() {
+        return " с " + drivingExperience +"-им стажем";
+    }
 }

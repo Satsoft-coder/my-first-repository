@@ -30,8 +30,6 @@ public class Main {
         driver2.setKeys(key2);
 
         Driver driver3=new Driver(10);
-      //  License[] lisenses3 = {License.C,License.DE};
-      //  driver3.setLicenses (lisenses3);
         int key3[]={21,22,23,45,35};
         driver3.setKeys(key3);
 
@@ -42,8 +40,12 @@ public class Main {
         Passenger passenger2=new Passenger(22,engine2,wheel2,License.BE,10);
         Passenger passenger3=new Passenger(45,engine1,wheel1,License.A1,2);
 
+        //действия
         passenger2.open(driver1);
         passenger1.open(driver1);
 
+        truck1.open(driver1);
+        truck1.open(driver2);
+        truck1.open(driver3);
     }
 }
