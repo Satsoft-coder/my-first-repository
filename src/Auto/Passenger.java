@@ -37,11 +37,25 @@ public class Passenger extends Car {
 
     @Override
     public void open(Driver driver) {
+        String status;
+
         if (checkKey(driver)) {
-            System.out.println("Водитель"+driver+ " открыл пассажирский авто ключем "+super.getPIN_CODE());
+
+            if (isOpen()) {
+                setOpen(false);
+                status="закрыт";
+            }
+            else{
+                setOpen(true);
+                status="открыт";
+            };
+
+            System.out.println("Водитель"+driver+
+                    " воспользовался ключем "+super.getPIN_CODE()+" на пассажирский авто, " +
+                    "теперь он "+status);
         }
         else {
-            System.out.println("Водитель"+driver+ " не смог открыть авто");
+            System.out.println("Водитель"+driver+ " не смог открыть пассажирский авто");
         }
     }
 }

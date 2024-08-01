@@ -15,30 +15,27 @@ public class Truck extends Car {
 
     @Override
     public void open(Driver driver) {
+
+        String status;
         if (checkKey(driver)) {
-            System.out.println("Водитель"+driver+ " открыл грузовой авто ключем "+super.getPIN_CODE());
-        }
-        else {
-            System.out.println("Водитель"+driver+ " не смог открыть авто");
-        }
-    }
 
-//    private boolean checkKey(Driver driver) {
-//        int driverKey[]=driver.getDriverKey();
-//        boolean result = false;
-//
-//        for (int i = 0; i < driverKey.length; i++) {
-//            boolean isKeyPinCodeValid = driverKey[i] == Truck.super.getPIN_CODE();
-//            /*
-//            key.getPIN_CODE() == PIN_CODE;
-//            CTRL + ALT + V
-//            boolean b = key.getPIN_CODE() == PIN_CODE;
-//            */
-//            if (isKeyPinCodeValid) return isKeyPinCodeValid;
-//        }
-//        return result;
-//    }
+            if (isOpen()) {
+                setOpen(false);
+                status = "закрыт";
+            } else {
+                setOpen(true);
+                status = "открыт";
+            }
+            ;
 
+            System.out.println("Водитель" + driver +
+                    " воспользовался ключем " + super.getPIN_CODE() + " на грузовой авто, " +
+                    "теперь он " + status);
+        }
+            else{
+                System.out.println("Водитель" + driver + " не смог открыть грузовой авто");
+            }
+        }
 
     @Override
     public void start() {
@@ -50,3 +47,4 @@ public class Truck extends Car {
 
     }
 }
+

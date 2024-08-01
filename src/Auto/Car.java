@@ -2,6 +2,9 @@ package Auto;
 
 public abstract class Car implements Openable,Startable,Moveble {
     private final int PIN_CODE;
+    private boolean open;
+    private boolean start;
+
     Engine engine;
     Wheels wheels;
 
@@ -40,6 +43,14 @@ public abstract class Car implements Openable,Startable,Moveble {
         public Wheels getWheels () {
             return wheels;
         }
+
+    public boolean isOpen() {
+        return open;
+    }
+
+    public void setOpen(boolean open) {
+        this.open = open;
+    }
 
     public abstract void open(Driver driver);
 }

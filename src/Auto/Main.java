@@ -43,6 +43,8 @@ public class Main {
         //действия
         passenger2.open(driver1);
         passenger1.open(driver1);
+        passenger1.open(driver1);
+        passenger1.open(driver1);
 
         truck1.open(driver1);
         truck1.open(driver2);
