@@ -71,11 +71,12 @@ public class ArrayListAnalog {
         for (int i = 0; i < oldDataLength; i++) {
             oldData[i]=data[i];
         }
-        data=new Object[newDataLength];
-        //System.arraycopy(oldData,0,data,0,newDataLength);
-        for (int i = 0; i < newDataLength; i++) {
-            data[i]=oldData[i];
-        }
+
+        data=oldData;
+//        data=new Object[newDataLength];
+//        for (int i = 0; i < newDataLength; i++) {
+//            data[i]=oldData[i];
+//        }
     }
 
     //удаление всех элементов
