@@ -1,6 +1,5 @@
 package by.peshki.entity;
 
-import by.peshki.enumes.DayOfWeek;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,9 +16,8 @@ public class Lesson {
     @Column(columnDefinition = "serial")
     private int id;
     private String Name;
+    @OneToOne
     private Day day;
     @ManyToMany
     private List<Teacher> teachers;
-
-
 }

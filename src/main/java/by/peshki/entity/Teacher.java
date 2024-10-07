@@ -22,8 +22,4 @@ public class Teacher {
     private String fullName;
     @ManyToMany
     private List<Lesson> lessons;
-
-
-
-
 }

@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.*;
 
-import javax.lang.model.element.Name;
 import java.util.List;
 
 @Entity
